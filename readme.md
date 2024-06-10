@@ -101,11 +101,11 @@ You can use this link to setup a database online: [`NeonDb`](https://console.neo
         ```typescript
         describe("LearnersImpl", function () {
             it("should create and fetch a learner", async () => {
-                const learner = await learnersImpl.createLearner({
+                let addLearner = await learnersImpl.createLearner({
                     name: "John",
                     email: "doe@gmail.com"
                 });
-                assert.equal(true, learner);
+                assert.equal(true, addLearner);
 
                 let learner = await learnersImpl.fetchLearners();
                 assert.deepEqual(
