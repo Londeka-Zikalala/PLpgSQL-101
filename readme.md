@@ -160,7 +160,7 @@ You can use this link to setup a database online: [`NeonDb`](https://console.neo
         };
         ```
 
-### CI/CD with GitHub Actions Workflow
+### Local database CI/CD with GitHub Actions Workflow setup
 
 1. **Create a Node.js CI Actions configuration**
 
