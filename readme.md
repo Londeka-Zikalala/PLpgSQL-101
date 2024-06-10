@@ -2,13 +2,9 @@
 
 ## Overview
 
-This project outlines the steps needed to integrate PLpgSQL functions with SQL and TypeScript code, leveraging Node.js for GitHub Actions for CI/CD processes.
+This project outlines the steps needed to integrate PLpgSQL functions from TypeScript/JavaScript code, and how to use GitHub Actions for CI/CD processes.
 
 ## Getting started
-
-### Prerequisites
-
-Ensure you have `PostgreSQL` installed and configured on your local machine. Familiarity with the `psql` command-line tool is required.
 
 ### Installation
 
@@ -19,6 +15,8 @@ Ensure you have `PostgreSQL` installed and configured on your local machine. Fam
 ### Setting up the database
 
 ### Initialize Database Tables and `PLpgSQL` functions
+
+### Local Database setup
 
 1. **Create Database Table**
 
@@ -57,6 +55,10 @@ Ensure you have `PostgreSQL` installed and configured on your local machine. Fam
     ```
 
     `PostgreSQL` will respond with `t` if the insertion was successful, indicating true. Otherwise will respond with `f` if the insertion was not successful, indicating false.
+
+### Online database setup
+
+You can use this link to setup a database online: [`NeonDb`](https://console.neon.tech/app/projects)
 
 ### Testing `PLpgSQL` functions integrated with `SQL` and TS using Mocha.js
 
@@ -99,10 +101,12 @@ Ensure you have `PostgreSQL` installed and configured on your local machine. Fam
         ```typescript
         describe("LearnersImpl", function () {
             it("should create and fetch a learner", async () => {
-                await learnersImpl.createLearner({
+                const learner = await learnersImpl.createLearner({
                     name: "John",
                     email: "doe@gmail.com"
                 });
+                assert.equal(true, learner);
+
                 let learner = await learnersImpl.fetchLearners();
                 assert.deepEqual(
                     {
