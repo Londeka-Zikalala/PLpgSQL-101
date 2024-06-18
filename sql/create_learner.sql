@@ -1,0 +1,1 @@
+SELECT * FROM create_learner('Lebo', 'Mathosa', 'lebo@mathosa.com', 1)
