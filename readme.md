@@ -1,3 +1,4 @@
+[![Node.js CI](https://github.com/Londeka-Zikalala/PLpgSQL-101/actions/workflows/node.js.yml/badge.svg)](https://github.com/Londeka-Zikalala/PLpgSQL-101/actions/workflows/node.js.yml)
 # PLpgSQL-101
 
 ## Overview
