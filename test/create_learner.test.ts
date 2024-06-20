@@ -12,7 +12,7 @@ describe("LearnersImpl", function () {
     beforeEach(async function () {
         // Clear existing test data
         await db.none(`TRUNCATE TABLE learner RESTART IDENTITY CASCADE`);
-      });
+    });
     // Test case to create and fetch a learner
     it("should create and fetch a learner", async () => {
         // Create a new learner
@@ -35,8 +35,8 @@ describe("LearnersImpl", function () {
                 grade_id: 1,
                 id: 1,
                 last_name: 'Doe'
-              }
-                 ,
+            }
+            ,
             learner[0]
         );
     });
@@ -67,8 +67,4 @@ describe("LearnersImpl", function () {
         // Assert that there are two learners
         assert.equal(2, learners.length);
     });
-//       after(async function () {
-//     // Disconnect from the database after the tests
-//     await db.$pool.end();
-//   });
 });

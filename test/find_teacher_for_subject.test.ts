@@ -19,17 +19,15 @@ const linkTeacherToSubject = new LinkTeacherToSubject(db);
 describe("FindTeacherForSubject", function () {
     beforeEach(async function () {
         // Clear existing test data
-      await db.none(`TRUNCATE TABLE subject_teacher RESTART IDENTITY CASCADE`);
-
-      
-      });
+        await db.none(`TRUNCATE TABLE subject_teacher RESTART IDENTITY CASCADE`);
+    });
     // Test case to create and fetch a learner
     it("should find a teacher for a subject", async () => {
         // Create or fetch subject
         createSubject.createSubject({
-            the_name:'Economics'
-       })
-        
+            the_name: 'Economics'
+        })
+
         // Add or fetch teacher
         await addTeacher.fetchTeachers();
 
@@ -39,7 +37,7 @@ describe("FindTeacherForSubject", function () {
                 subject_id: 2,
                 teacher_id: 1
             });
-   
+
         // find teacher for subject
         let findTeacher = await findTeacherForSubject.findTeacher(
             { subject_name: "Economics" });
@@ -47,14 +45,14 @@ describe("FindTeacherForSubject", function () {
         assert.deepEqual(
             [
                 {
-                  email: 'doeth@gmail.com',
-                  first_name: 'Johnathan',
-                  last_name: 'Doeth',
-                  teacher_id: 1
+                    email: 'doeth@gmail.com',
+                    first_name: 'Johnathan',
+                    last_name: 'Doeth',
+                    teacher_id: 1
                 }
-              ]
-              
-        , findTeacher);
+            ]
+
+            , findTeacher);
 
     });
 

@@ -12,7 +12,7 @@ describe("CreateSubject function", function () {
     beforeEach(async function () {
         // Clear existing test data
         await db.none(`TRUNCATE TABLE subject RESTART IDENTITY CASCADE`);
-      });
+    });
     // Test case to create and fetch a learner
     it("should create and fetch a subject", async () => {
         // Create a new learner
@@ -27,15 +27,11 @@ describe("CreateSubject function", function () {
         // Assert that the fetched learner matches the created learner
         assert.deepEqual(
             {
-id: 1,
-  name: 'Mathematics'
-              }
-                 ,
+                id: 1,
+                name: 'Mathematics'
+            }
+            ,
             subject[0]
         );
     });
-//       after(async function () {
-//     // Disconnect from the database after the tests
-//     await db.$pool.end();
-//   });
 });

@@ -50,7 +50,7 @@ describe("FindTeacherForSubject", function () {
         // find teacher for subject
         let findTeacher = yield findTeacherForSubject.findTeacher({ subject_name: "Economics" });
         // Assert that the learner was created successfully
-        assert_1.default.equal([
+        assert_1.default.deepEqual([
             {
                 email: 'doeth@gmail.com',
                 first_name: 'Johnathan',
